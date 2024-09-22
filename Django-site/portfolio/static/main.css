@@ -6,13 +6,53 @@ body{
   background-color: #eee;
 }
 
+a {
+  color: inherit;
+  font: inherit;
+  text-decoration: none;
+}
+
 #header__main-container{
-  min-height: 30rem;
-  text-align: center;
+  padding: 0.5rem 1rem;
+  height: 100dvh;
+  max-height: 25rem;
+  display: flex;
+  flex-direction: column;
   background-color: #333;
 }
 
 #header__main-container h1{
   display: inline-block;
   color: #eee;
+  align-self: center;
+}
+
+#header__main-container nav {
+  margin-top: auto;
+display: flex;
+justify-content: space-between;
+align-items: baseline;
+}
+
+#header__main-container nav ul {
+  margin: 0;
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  color: #eee;
+  font-size: 1.1rem;
+}
+
+.logo__container-main {
+  max-width: 5rem;
+  max-height: 5rem;
+}
+
+img {
+  max-width: 100%;
+  min-height: 100%;
+}
+
+main {
+  padding-inline: 1rem;
 }
