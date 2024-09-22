@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../static/main.css">
+  <title>{{ page_title | title}}</title>
+</head>
+<body>
+  <header id="header__main-container">
+    <h1>{{title | title}}</h1>
+  </header>
+
+  {% if user.is_authenticated %} 
+    Hello, {{ user.username }}!
+  {% else %}
+    Hi, please sign up.
+  {% endif %}
+
+  
+  {% for item in items%}
+  <ul>
+    <li>{{ item }}</li>
+  </ul>
+  {% endfor %}
+
+</body>
+</html>
