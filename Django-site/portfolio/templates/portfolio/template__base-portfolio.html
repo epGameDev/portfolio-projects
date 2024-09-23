@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../../static/main.css">
+  {% load static %}
+  <link rel="stylesheet" href="{% static "portfolio/main.css" %}">
   <title>{% block title %} Django Project {% endblock title %}</title>
 </head>
 <body>
@@ -13,7 +14,8 @@
     <nav class="nav__main-container">
 
       <div class="logo__container-main">
-        <img src="../../static/logo.png" alt="logo of python and Django">
+        {% load static %}
+        <img src="{% static "portfolio/logo.png" %}" alt="logo of python and Django">
       </div>
 
         <ul>

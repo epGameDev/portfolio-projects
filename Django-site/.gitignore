@@ -1,3 +1,27 @@
+# Configuration files
+config/settings_local.py
+config/settings/*.pyc
+
+# Database files
+*.sqlite3
+
+# Secrets
+secrets/
+*.key
+*.pem
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/env.bak
+venv.bak
+.python-version
+
+# Jupyter Notebooks
+.ipynb_checkpoints
+
 ### OSX ###
 .DS_Store
 .AppleDouble
@@ -6,6 +30,39 @@
 # Icon must end with two \r
 Icon
 
+# Editor-specific Files
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extentions.json
+.history
+
+# Sublime Text
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+*.sublime-workspace
+*.sublime-project
+
+# mypy
+.mypy_cache/
+
+# SageMath parsed files
+*.sage.py
+
+# celery
+celerybeat-schedule.*
+
+# Package control specific files
+Control.last-run
+Control.ca-list
+Control.ca-bundle
+Control.system-ca-bundle
+Github.sublime-settings
+
+# sftp configuration file
+sftp-config.json
 
 # Thumbnails
 ._*
@@ -21,31 +78,55 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
+# Sensitive or high-churn files
+.idea/**/datasources/
+.idea/**/datasources.ids
+.idea/**/datasources.local.xml
+.idea/**/sqldatasources.xml
+.idea/**/dynamic.xml
+.idea/**/uiDesigner.xml
+.idea/**/dbnavigator.xml
+
+#JIRA plugin
+atlassian-ide-plugin.xml
+
+# IntelliJ
+out/
+
+# Graddle 
+.idea/**/gradle.xml
+.idea/**/libraries
+
+# File-based project format
+*.iws
 
 ### Python ###
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
+*$py.class
 
 # C extensions
 *.so
 
 # Distribution / packaging
 .Python
-env/
 build/
 develop-eggs/
 dist/
 downloads/
 eggs/
+.eggs/
 lib/
 lib64/
 parts/
 sdist/
 var/
+*.whl
 *.egg-info/
 .installed.cfg
 *.egg
+
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
@@ -60,10 +141,15 @@ pip-delete-this-directory.txt
 # Unit test / coverage reports
 htmlcov/
 .tox/
+.nox/
 .coverage
+.coverage.*
 .cache
+.pytest_cache/
 nosetests.xml
 coverage.xml
+*.cover
+.hypothesis/
 
 # Translations
 *.mo
@@ -75,13 +161,26 @@ docs/_build/
 # PyBuilder
 target/
 
+#AWS User-specific
+.idea/**/aws.xml
 
 ### Django ###
-*.log
 *.pot
 *.pyc
 __pycache__/
 local_settings.py
 
-.env
-db.sqlite3
+# Temporary files
+*.tmp
+*.temp
+*.bak
+
+# Logs
+*.log
+pip-log.txt
+pip-delete-this-directory.txt
+
+# mkdocs documentation
+/site
+
+media
