@@ -1,4 +1,5 @@
 from django.db import models
+from datetime import date
 
 # Create your models here.
 
@@ -8,7 +9,7 @@ class MyNotes(models.Model):
     Title: String, Date: NewDate, Subject: String, Content: String, Draft: Boolean
     """
     title = models.CharField(max_length=50, blank=False)
-    date = models.DateField(auto_now_add=True)
+    date = models.DateField(default=date.today)
     subject = models.CharField(max_length=50, blank=False)
     content = models.TextField()
     draft = models.BooleanField(default=True)

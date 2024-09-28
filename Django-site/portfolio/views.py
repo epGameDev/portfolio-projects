@@ -1,4 +1,5 @@
 from django.shortcuts import render,  HttpResponse
+from .models import MyNotes
 
 # Create your views here.
 def index (req):
@@ -23,3 +24,13 @@ def about (req):
     
     return render(req, "portfolio/about.html", params)
 
+def docs (req):
+    
+    production_docs = MyNotes.objects.filter(draft=True)
+    params = {
+        "page_title": "My Notes",
+        "tag": "Documentation and References",
+        "notes": production_docs,
+    }
+
+    return render(req, "portfolio/docs.html", params)

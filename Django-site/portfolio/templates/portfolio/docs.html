@@ -1,0 +1,11 @@
+{% extends "portfolio/template__base-portfolio.html" %}
+{% load humanize %}
+
+{% block content %}
+<ul>
+  {% for note in notes%} 
+    <li>{{ note.title | title }}  |  {{ note.date | date}}  |  {{ note.content }} </li>
+  {% endfor %}
+</ul>
+
+{% endblock content %}
