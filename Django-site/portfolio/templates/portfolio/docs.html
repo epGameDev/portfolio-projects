@@ -4,7 +4,8 @@
 {% block content %}
 <ul>
   {% for note in notes%} 
-    <li>{{ note.title | title }}  |  {{ note.date | date}}  |  {{ note.content }} </li>
+    <li> <a href="/post/{{ note.id }}"> {{ note.title | title }} </a>  |  {{ note.date | date}}  |  {{ note.content }} </li>
+    
   {% endfor %}
 </ul>
 

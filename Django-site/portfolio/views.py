@@ -1,4 +1,4 @@
-from django.shortcuts import render,  HttpResponse
+from django.shortcuts import render, get_object_or_404
 from .models import MyNotes
 
 # Create your views here.
@@ -24,6 +24,7 @@ def about (req):
     
     return render(req, "portfolio/about.html", params)
 
+
 def docs (req):
     
     production_docs = MyNotes.objects.filter(draft=True)
@@ -34,3 +35,14 @@ def docs (req):
     }
 
     return render(req, "portfolio/docs.html", params)
+
+
+def post (req, pk):
+    post = get_object_or_404(MyNotes, id=pk, draft=True)
+    params = {
+        "page_title": "Post",
+        "tag": "My post",
+        "post": post,
+    }
+
+    return render(req, "portfolio/post.html", params)

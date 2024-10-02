@@ -1,0 +1,19 @@
+{% extends "portfolio/template__base-portfolio.html" %} 
+
+{% block content %}
+
+{% if post.draft == False %}
+
+<div class="post__container">
+  <h2>{{ post.title | title }}</h2>
+  <pre>{{ post.date }}</pre>
+  <hr/>
+  <br/>
+  <p>{{ post.content }}</p>
+</div>
+
+{% else %}
+<h1>No post at this time.</h1>
+{% endif %} 
+
+{% endblock content %}

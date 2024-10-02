@@ -24,5 +24,6 @@ urlpatterns = [
     path('', views.index, name="home"),
     path('about/', views.about, name="about"),
     path('docs/', views.docs, name="docs"),
+    path('post/<int:pk>/', views.post, name="post"),
 
 ]
