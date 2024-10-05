@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import MyNotes
+from .models import Note
 
 # Create your views here.
 def index (req):
@@ -27,7 +27,7 @@ def about (req):
 
 def docs (req):
     
-    production_docs = MyNotes.objects.filter(draft=True)
+    production_docs = Note.objects.filter(draft=False)
     params = {
         "page_title": "My Notes",
         "tag": "Documentation and References",
@@ -38,7 +38,7 @@ def docs (req):
 
 
 def post (req, pk):
-    post = get_object_or_404(MyNotes, id=pk, draft=True)
+    post = get_object_or_404(Note, id=pk, draft=False)
     params = {
         "page_title": "Post",
         "tag": "My post",

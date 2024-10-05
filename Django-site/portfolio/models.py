@@ -3,7 +3,7 @@ from datetime import date
 
 # Create your models here.
 
-class MyNotes(models.Model):
+class Note(models.Model):
     """
     Model for creating and storing notes on Django and Python subject matter.
     Title: String, Date: NewDate, Subject: String, Content: String, Draft: Boolean
@@ -14,3 +14,5 @@ class MyNotes(models.Model):
     content = models.TextField()
     draft = models.BooleanField(default=True)
 
+    def __str__(self):
+        return f"Note: {self.title} | {self.date} | {self.draft}"
