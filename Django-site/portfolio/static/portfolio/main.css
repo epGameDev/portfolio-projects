@@ -22,13 +22,24 @@ hr{
   margin: 3rem 0rem;
 }
 
+.bg-overlay{
+  background-color: #000;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 53%;
+}
+
 #header__main-container{
   padding: 0.5rem 1rem;
   height: 100dvh;
   max-height: 25rem;
   display: flex;
   flex-direction: column;
-  background-color: #333;
+  background-image: url(./bg.jpg);
+  position: relative;
 }
 
 #header__main-container h1{
@@ -39,9 +50,11 @@ hr{
 
 #header__main-container nav {
   margin-top: auto;
-display: flex;
-justify-content: space-between;
-align-items: baseline;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  position: relative;
+  z-index: 10;
 }
 
 #header__main-container nav ul {
@@ -54,7 +67,7 @@ align-items: baseline;
 }
 
 .logo__container-main {
-  max-width: 5rem;
+  max-width: 17rem;
   max-height: 5rem;
 }
 

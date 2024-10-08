@@ -9,23 +9,26 @@
   </head>
   <body>
     <header id="header__main-container">
-      <h1 class="text-4xl"> {{tag | title}} </h1>
+      <div class=bg-overlay>
+      </div>
 
-      <nav class="nav__main-container">
-        <div class="logo__container-main">
-          {% load static %} <img src="{% static "portfolio/logo.png" %}"
-          alt="logo of python and Django">
-        </div>
-
-        <ul>
-          <li><a href="{% url 'home' %}">Home</a></li>
-          <li><a href="{% url 'about' %}">About</a></li>
-          <li><a href="{% url 'home' %}">Contact Me</a></li>
-          <li><a href="{% url 'docs' %}">My Docs</a></li>
-        </ul>
-      </nav>
-    </header>
-
+        <h1 class="text-4xl"> {{tag | title}} </h1>
+        
+        <nav class="nav__main-container">
+          <div class="logo__container-main">
+            {% load static %} <img src="{% static "portfolio/logo.svg" %}"
+            alt="logo of python and Django">
+          </div>
+          
+          <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'home' %}">Contact Me</a></li>
+            <li><a href="{% url 'docs' %}">My Docs</a></li>
+          </ul>
+        </nav>
+      </header>
+      
     <main>{% block content %} Welcome To My Site! {% endblock content %}</main>
   </body>
 </html>

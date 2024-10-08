@@ -2,10 +2,132 @@
 {% load humanize %}
 
 {% block content %}
-<ul>
+{% comment %} <ul>
   {% for note in notes %} 
     <li> <a href="/post/{{ note.id }}" > {{ note.title | title }} </a>  |  {{ note.date | date}}  |  {{ note.content }} </li>
   {% endfor %}
-</ul>
+</ul> {% endcomment %}
+
+<h2> This is not complete and will be updated soon. ...hopefully. </h2>
+
+<hr/>
+
+<article>
+
+  <h3>Setting Up Virtual Environment</h3>
+  
+  <p>To start a project, we create a virtual environment to work locally. Bellow we will create this venv virtual environment and name it <span><code>env</code></span>.</p>
+
+
+    <code class="code code-bash">
+      python -m venv env
+    </code>
+
+    <p>This will create a folder for us called <code>env</code> which contains the virtual environment. It contains the files needed, like the Python interpreter and the pip library.</p>
+
+    <p>We then need to activate the virtual environment by using <code>source</code> and directing it to the path of the <code>activate</code> script file within our <code>env</code> folder. To do that we do the following command in the terminal:</p>
+
+    <code class="code code-bash">source env/bin/activate</code>
+
+    <p>
+      Doing this uses <code>source</code> command which is used to activate the virtual environment. The <code>activate</code> script will adjusts environment variables to the virtual environment's directories so that Python runs from this isolated environment. At this point, you should see that you are now in your virtual environment.
+    </p>
+
+    <p>
+      To deactivate the virtual environment and return to your global Python setup, you can use the <code>deactivate</code> command.
+    </p>
+
+    <code class="code code-bash">
+      deactivate
+    </code>
+
+    <h3>Creating A DJango Project</h3>
+
+    <p>
+      The next step would be to install Django to our virtual environment. We do this with the following command:
+    </p>
+
+
+<code class="code">
+<pre>
+# Latest Version
+$ pip install django
+
+# Or a specific version like below:
+$ pip install django==3.6
+</pre>
+</code>
+
+
+    <p>
+      and then we will create a django project with the following command:
+    </p>
+
+    <code class="code code-bash">
+      django-admin startproject myprojectname
+    </code>
+
+    <p>
+      This file will contain all the configuration files needed to run the project. In my case I created the project with this command:
+    </p>
+
+<code class="code">
+<pre>
+# The dot at the end is to create a file in the current directory
+$ django-admin startproject config .
+</pre>
+</code>
+
+  <p>
+    You should now see we have a config folder and a <code>manage.py</code> file in your project structure.
+  </p>
+
+  {% load static %} <img src="{% static 'portfolio/config.png' %}" alt="image of the django folder structure">
+
+  <br/>
+  <br/>
+
+  <p>
+    Now with this set up we can create an app in our Django project. Apps are meant to serve as one function or intent in a Django project. For this project, we are setting up a Rest API for a recipe app. So we will create the app as shown bellow.
+  </p>
+
+<code class="code">
+<pre>
+# recipes can be what ever you want to name your app
+$  python manage.py startapp recipes
+</pre>
+</code>
+
+
+<p>
+and you should see that app folder created in your folder structure.
+</p>
+
+{% load static %} <img src="{% static 'portfolio/22.png' %}" alt="">
+
+<br/>
+<br/>
+
+<p>
+To ensure you can use the app in your project, navigate to your project folder and add the app name to your installed apps. In my case it will be <code>config > settings.py</code> and there will be a list (array) of installed apps. Below is an example where I added games to that list of apps and you will need to do this with every app you create.
+</p>
+
+<code class="code">
+<pre>
+  # Application definition
+
+  INSTALLED_APPS = [
+      'django.contrib.admin',
+      'django.contrib.auth',
+      'django.contrib.contenttypes',
+      'django.contrib.sessions',
+      'django.contrib.messages',
+      'django.contrib.staticfiles',
+      'recipes',
+  ]
+</pre>
+</code>
+
+</article>
 
 {% endblock content %}
