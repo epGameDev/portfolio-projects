@@ -12,6 +12,16 @@ a {
   text-decoration: none;
 }
 
+p{
+  max-width: 75ch;
+  line-height: 1.1rem;
+  letter-spacing: 0.5px;
+}
+
+hr{
+  margin: 3rem 0rem;
+}
+
 #header__main-container{
   padding: 0.5rem 1rem;
   height: 100dvh;
@@ -49,10 +59,47 @@ align-items: baseline;
 }
 
 img {
+  margin: auto;
+  width: 100%;
   max-width: 100%;
   min-height: 100%;
 }
 
 main {
   padding-inline: 1rem;
+}
+
+main h2 {
+  margin: 3rem auto;
+  max-width: 75ch;
+}
+
+article {
+  margin: 1rem auto;
+  max-width: max-content;
+}
+
+.code {
+  margin: 3rem 0rem;
+  padding: 1rem 2rem;
+  width: 100%;
+  display: block;
+  background-color: #aaaaaa4d;
+  overflow-inline: scroll;
+}
+
+.code-bash::before{
+  content: "$ ";
+}
+
+code {
+  padding: 0.17rem 0.30rem;
+  max-width: 75ch;
+  border-radius: 4px;
+  background-color: #aaaaaab6;
+}
+
+pre{
+  margin: 0;
+  padding: 0;
 }
