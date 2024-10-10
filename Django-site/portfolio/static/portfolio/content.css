@@ -1,5 +1,5 @@
 .post__container, .doc__list-container {
-  margin: auto;
+  margin: 2rem auto;
 }
 
 .social__link-container{
@@ -14,5 +14,14 @@
 
 .social__link-container li a {
   font-weight: 600;
-  color: #ff4525;
+  color: #0f8f2c;
+}
+
+.article__container p{
+  line-height: 1.3rem;
+}
+
+.article__container a {
+  font-weight: 600;
+  color: #0f8f2c;
 }

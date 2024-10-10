@@ -6,9 +6,9 @@ from .models import Note
 def index (req):
 
     params = {
-                "page_title": "Python Portfolio Project",
-                "tag": "welcome to my django project"
-            }
+        "page_title": "Python Portfolio Project",
+        "tag": "welcome to my django project"
+    }
     
     return render(req, "portfolio/index.html", params)
 
@@ -17,13 +17,21 @@ def index (req):
 def about (req):
 
     params = {
-                "page_title": "about me",
-                "tag": "welcome, here is a little about me",
-                "items": ["one", "two", "three"],
-
-        }
+        "page_title": "about me",
+        "tag": "welcome, here is a little about me",
+        "items": ["one", "two", "three"],
+    }
     
     return render(req, "portfolio/about.html", params)
+
+
+def contact (req):
+    params = {
+        "page_title": "about me",
+        "tag": "welcome, here is a little about me",
+        "items": ["one", "two", "three"],
+    }
+    return render(req, "portfolio/contact.html", params)
 
 
 def docs (req):
