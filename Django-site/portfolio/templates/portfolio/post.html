@@ -9,7 +9,7 @@
   <pre>{{ post.date }}</pre>
   <hr/>
   <br/>
-  <p>{{ post.content }}</p>
+  <p>{{ post.content | safe }}</p>
 </div>
 
 {% else %}

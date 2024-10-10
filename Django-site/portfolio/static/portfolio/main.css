@@ -22,6 +22,67 @@ hr{
   margin: 3rem 0rem;
 }
 
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+li{
+  list-style: none;
+}
+
+main {
+  padding-inline: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+main h2 {
+  margin: 3rem auto;
+  max-width: 75ch;
+}
+
+article {
+  margin: 1rem auto;
+  max-width: max-content;
+}
+
+.code {
+  margin: 3rem 0rem;
+  padding: 1rem 2rem;
+  width: 100%;
+  display: block;
+  background-color: #aaaaaa4d;
+  overflow-inline: scroll;
+}
+
+.code-bash::before{
+  content: "$ ";
+}
+
+code {
+  padding: 0.17rem 0.30rem;
+  max-width: 75ch;
+  border-radius: 4px;
+  background-color: #aaaaaab6;
+}
+
+pre{
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  margin: auto;
+  width: 100%;
+  max-width: 100%;
+  min-height: 100%;
+}
+
+/* =============================================== */
+/* =========== Global Custom Class CSS =========== */
+
 .bg-overlay{
   background-color: #000;
   position: absolute;
@@ -69,50 +130,4 @@ hr{
 .logo__container-main {
   max-width: 17rem;
   max-height: 5rem;
-}
-
-img {
-  margin: auto;
-  width: 100%;
-  max-width: 100%;
-  min-height: 100%;
-}
-
-main {
-  padding-inline: 1rem;
-}
-
-main h2 {
-  margin: 3rem auto;
-  max-width: 75ch;
-}
-
-article {
-  margin: 1rem auto;
-  max-width: max-content;
-}
-
-.code {
-  margin: 3rem 0rem;
-  padding: 1rem 2rem;
-  width: 100%;
-  display: block;
-  background-color: #aaaaaa4d;
-  overflow-inline: scroll;
-}
-
-.code-bash::before{
-  content: "$ ";
-}
-
-code {
-  padding: 0.17rem 0.30rem;
-  max-width: 75ch;
-  border-radius: 4px;
-  background-color: #aaaaaab6;
-}
-
-pre{
-  margin: 0;
-  padding: 0;
 }

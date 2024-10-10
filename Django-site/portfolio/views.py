@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404
+import markdown
 from .models import Note
 
 # Create your views here.
@@ -38,7 +39,10 @@ def docs (req):
 
 
 def post (req, pk):
+    md = markdown.Markdown(extensions=["fenced_code"])
     post = get_object_or_404(Note, id=pk, draft=False)
+    post.content = md.convert(post.content)
+
     params = {
         "page_title": "Post",
         "tag": "My post",

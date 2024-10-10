@@ -14,5 +14,8 @@ class Note(models.Model):
     content = models.TextField()
     draft = models.BooleanField(default=True)
 
+    class Meta:
+        verbose_name_plural = "Markdown Content"
+
     def __str__(self):
         return f"Note: {self.title} | {self.date} | {self.draft}"

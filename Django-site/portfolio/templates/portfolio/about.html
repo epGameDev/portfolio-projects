@@ -2,7 +2,7 @@
 
 {% block content %}
 
-  {% if user.is_authenticated %} 
+  {% comment %} {% if user.is_authenticated %} 
     Hello, {{ user.username }}!
   {% else %}
     Hi, please sign up.
@@ -13,6 +13,45 @@
   <ul>
     <li>{{ item }}</li>
   </ul>
-  {% endfor %}
+  {% endfor %} {% endcomment %}
+  <div class="social__link-container">
+    <li>Github: <span><a href="https://github.com/epGameDev" target="_blank">epGameDev</a></span></li>
+    <li>LinkedIn: <span><a href="https://www.linkedin.com/in/eric-philippot" target="_blank">eric-philippot</a></span></li>
+    <li>Web Site: <span><a href="https://ericphilippot.com" target="_blank">EricPhilippot.com</a></span></li>
+  </div>
+
+  <article>
+
+    <div class="article__container">
+        <h2>About Me</h2>
+
+        <p> Hi, my name is Eric Philippot. I grew up in a small town outside Winnipeg, Manitoba, Canada. My early days where on the family's dairy farm where technology was far from present and life consisted of sports, backyard adventures, the games we now call retro.</p>
+
+        <p>On the days my brother would return from college, he brought his PC where I would learn to work the file system, learn the applications and played many games like Dune 2000, StarCraft, 007 and The Sims (rosebud 😏). Later in my adolescence my father bought me my first laptop. It shaped the journey I am on now. I also still have that laptop.</p>
+
+        <p>In 2011, I started working at my local Party City store as a temp. After being accepted to the team and surpassing positions to operations, I met one employee taking a local college course on game development. Fascinated, I asked him if it was hard to pick up. I was reassured that as long as I watch out for the infinite loop of death, it wasn't that hard.  I then went on a scavenger hunt for the cheapest learning path.</p>
+
+        <p>I found <a href="https://www.udemy.com/" target="_blank" >Udemy.com</a>, and an easy to follow instructor that was part of a company called Devslopes. I took that course which boosted my confidence. It became even easier after I found <a href="https://www.gamedev.tv/" target="_blank" rel="noopener noreferrer">GameDev.tv</a> and <a href="http://gamedevhq.com" target="_blank" rel="noopener noreferrer">GameDevHQ</a> whom gave very well detail on the C# language and the Unity Engine.</p>
+
+        <p>I took part in game jams and made many personal projects. In a few years after doing this, just making games wasn't enough. There was a lot of abstraction behind the scenes, behind multiplayer and how game updates and patches worked. Courses at the time never educated in that direction. This curiosity led me to web development in 2019.</p> 
+
+        <p>With the help of instructors at <a href="https://zerotomastery.io/academy/" target="_blank" rel="noopener noreferrer">Zero To Mastery</a> and <a href="https://academind.com/" target="_blank" rel="noopener noreferrer">Academind</a>, I found all the educational material that I needed to succeed. I have built the foundational knowledge and applications in React, Astro (this site) and Django. Including NodeJS for backend development and APIs.</p>
+
+        <p> I enjoy tinkering with server side projects using <a href="https://www.raspberrypi.com/for-home/" target="_blank" rel="noopener noreferrer">Raspberry Pis</a>. I have built web servers, NAS systems and game consoles to name a few. I still love playing the retro games I grew up with and learning how technology works.</p>
+
+        <p> My current endeavor involves DevOps and Cloud Engineering. I have been studying python and Linux administration to get the foundational base. I am then going to seek my AWS cloud practitioners certification.</p>
+
+        <p> Special thanks to my instructors, <a href="https://zerotomastery.io/about/instructor/andrei-neagoie/" target="_blank" rel="noopener noreferrer">Andrei Neagoie</a>, <a href="https://www.linkedin.com/in/maximilian-schwarzmueller/" target="_blank" rel="noopener noreferrer"> Maximilian Schwarzmüller</a>, <a href="https://www.linkedin.com/in/manuel-lorenz-808b5185/" target="_blank" rel="noopener noreferrer"> Manuel Lorenz</a>. My game dev educators <a href="https://www.linkedin.com/in/jonweinberger/"  target="_blank" rel="noopener noreferrer"> Jonathan Weinberger</a> and the devoted team at <a href="https://gamedev.tv"  target="_blank" rel="noopener noreferrer"> Game Dev TV</a>. Inspirations like <a href="https://cassidoo.co/" target="_blank" rel="noopener noreferrer">Cassidy Williams</a>, <a href="https://wesbos.com/about" target="_blank" rel="noopener noreferrer">Wes Bos</a> and <a href="https://www.linkedin.com/in/stolinski/" target="_blank" rel="noopener noreferrer">Scott Tolinski</a>. I have learned so much from them throughout my journey. Thank you so much! 😊</p>
+
+        
+
+        <br>
+        <hr>
+        <br>
+    </div>
+
+</article>
+
+</main>
 
 {% endblock content %}
