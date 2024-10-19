@@ -4,6 +4,10 @@
   {% load static %} <link rel="stylesheet" href="{% static 'portfolio/about.css' %}">
 {% endblock styles %}
 
+{% block header %}
+  {% include "portfolio/snipets/header.html" with active_page="about" %}
+{% endblock header %}
+
 {% block content %}
 
   <div class="social__link-container">

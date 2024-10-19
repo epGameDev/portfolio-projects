@@ -2,6 +2,11 @@
   margin: 2rem auto;
 }
 
+.doc__list-container a {
+  font-weight: 600;
+  color: #0f8f2c;
+}
+
 pre:has(code){
   margin: 3rem 0rem;
   padding: 1rem 2rem;
@@ -9,7 +14,8 @@ pre:has(code){
   display: block;
   overflow-inline: scroll;
   border-radius: 4px;
-  background-color: #aaaaaab6;
+  background-color: #2D2D2D;
+  color: #fff;
 }
 
 pre > code{
@@ -18,8 +24,9 @@ pre > code{
 
 :not(pre) > code {
   padding: 0.4rem 0.5rem;
-  background-color: #aaa;
+  background-color: #484848;
   border-radius: 4px;
+  color: #fff;
 }
 
 .code {
@@ -27,10 +34,7 @@ pre > code{
   padding: 1rem 2rem;
   width: 100%;
   display: block;
-  background-color: #aaaaaa4d;
   overflow-inline: scroll;
-}
-
-.code-bash::before{
-  content: "$ ";
+  background-color: #000;
+  color: #fff;
 }

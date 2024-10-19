@@ -1,6 +1,15 @@
 {% extends "portfolio/template__base-portfolio.html" %}
 {% load humanize %}
 
+{% block styles %}
+ {% load static %} <link rel="stylesheet" href="{% static "portfolio/markdown.css" %}">
+{% endblock styles %}
+
+
+{% block header %}
+  {% include "portfolio/snipets/header.html" with active_page="docs" %}
+{% endblock header %}
+
 {% block content %}
 
 <div class="doc__list-container">

@@ -75,6 +75,8 @@ img {
   display: flex;
   flex-direction: column;
   background-image: url(./bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
   position: relative;
 }
 
@@ -101,10 +103,20 @@ img {
   display: flex;
   gap: 1rem;
   color: #eee;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
+}
+
+#header__main-container nav ul li:hover{
+  text-decoration: underline;
 }
 
 .logo__container-main {
   max-width: 17rem;
   max-height: 5rem;
+}
+
+.active{
+  font-weight: 600;
+  color: #15c93f;
+  text-decoration: underline;
 }

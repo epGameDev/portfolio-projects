@@ -28,7 +28,7 @@ def about (req):
 def contact (req):
     params = {
         "page_title": "about me",
-        "tag": "welcome, here is a little about me",
+        "tag": "shoot me a message anytime",
         "items": ["one", "two", "three"],
     }
     return render(req, "portfolio/contact.html", params)

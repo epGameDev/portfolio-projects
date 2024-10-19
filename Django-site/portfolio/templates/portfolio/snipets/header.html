@@ -1,0 +1,22 @@
+
+<header id="header__main-container">
+  <div class=bg-overlay>
+  </div>
+
+    <h1 class="text-4xl"> {{tag | title}} </h1>
+    
+    <nav class="nav__main-container">
+      <div class="logo__container-main">
+        {% load static %} <img src="{% static "portfolio/logo.svg" %}"
+        alt="logo of python and Django">
+      </div>
+      
+      <ul>
+        <li {% if active_page == "home" %} class="active" {% endif %} ><a href="{% url 'home' %}">Home</a></li>
+        <li {% if active_page == "about" %} class="active" {% endif %} ><a href="{% url 'about' %}">About</a></li>
+        <li {% if active_page == "contact" %} class="active" {% endif %} ><a href="{% url 'contact' %}">Contact Me</a></li>
+        <li {% if active_page == "docs" %} class="active" {% endif %} ><a href="{% url 'docs' %}">My Docs</a></li>
+      </ul>
+    </nav>
+    
+  </header>

@@ -3,6 +3,10 @@
   {% load static %} <link rel="stylesheet" href="{% static "portfolio/markdown.css" %}">
 {% endblock styles %}
 
+{% block header %}
+  {% include "portfolio/snipets/header.html" with active_page="home" %}
+{% endblock header %}
+
 
 {% block content %}
 
