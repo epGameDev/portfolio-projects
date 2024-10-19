@@ -14,7 +14,7 @@ a {
 
 p{
   max-width: 75ch;
-  line-height: 1.1rem;
+  line-height: 1.4rem;
   letter-spacing: 0.5px;
 }
 
@@ -59,18 +59,6 @@ article {
 
 .code-bash::before{
   content: "$ ";
-}
-
-code {
-  padding: 0.17rem 0.30rem;
-  max-width: 75ch;
-  border-radius: 4px;
-  background-color: #aaaaaab6;
-}
-
-pre{
-  margin: 0;
-  padding: 0;
 }
 
 img {

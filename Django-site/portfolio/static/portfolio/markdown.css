@@ -25,3 +25,23 @@
   font-weight: 600;
   color: #0f8f2c;
 }
+
+pre:has(code){
+  margin: 3rem 0rem;
+  padding: 1rem 2rem;
+  width: 100%;
+  display: block;
+  overflow-inline: scroll;
+  border-radius: 4px;
+  background-color: #aaaaaab6;
+}
+
+pre > code{
+  line-height: 1.5rem;
+}
+
+:not(pre) > code {
+  padding: 0.4rem 0.5rem;
+  background-color: #aaa;
+  border-radius: 4px;
+}
