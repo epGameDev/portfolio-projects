@@ -1,0 +1,23 @@
+.social__link-container{
+  margin: 2rem auto;
+  display: flex;
+  gap: 2rem;
+}
+
+.social__link-container li{
+  font-weight: 600;
+}
+
+.social__link-container li a {
+  font-weight: 600;
+  color: #0f8f2c;
+}
+
+.article__container p{
+  line-height: 1.3rem;
+}
+
+.article__container a {
+  font-weight: 600;
+  color: #0f8f2c;
+}

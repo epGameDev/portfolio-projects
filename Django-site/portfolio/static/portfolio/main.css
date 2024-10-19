@@ -48,19 +48,6 @@ article {
   max-width: max-content;
 }
 
-.code {
-  margin: 3rem 0rem;
-  padding: 1rem 2rem;
-  width: 100%;
-  display: block;
-  background-color: #aaaaaa4d;
-  overflow-inline: scroll;
-}
-
-.code-bash::before{
-  content: "$ ";
-}
-
 img {
   margin: auto;
   width: 100%;
@@ -95,6 +82,8 @@ img {
   display: inline-block;
   color: #eee;
   align-self: center;
+  position: relative;
+  font-size: 3rem;
 }
 
 #header__main-container nav {

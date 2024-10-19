@@ -1,19 +1,11 @@
 {% extends "portfolio/template__base-portfolio.html" %}
 
+{% block styles %}
+  {% load static %} <link rel="stylesheet" href="{% static 'portfolio/about.css' %}">
+{% endblock styles %}
+
 {% block content %}
 
-  {% comment %} {% if user.is_authenticated %} 
-    Hello, {{ user.username }}!
-  {% else %}
-    Hi, please sign up.
-  {% endif %}
-
-
-  {% for item in items%}
-  <ul>
-    <li>{{ item }}</li>
-  </ul>
-  {% endfor %} {% endcomment %}
   <div class="social__link-container">
     <li>Github: <span><a href="https://github.com/epGameDev" target="_blank">epGameDev</a></span></li>
     <li>LinkedIn: <span><a href="https://www.linkedin.com/in/eric-philippot" target="_blank">eric-philippot</a></span></li>

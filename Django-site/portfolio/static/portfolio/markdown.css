@@ -2,30 +2,6 @@
   margin: 2rem auto;
 }
 
-.social__link-container{
-  margin: 2rem auto;
-  display: flex;
-  gap: 2rem;
-}
-
-.social__link-container li{
-  font-weight: 600;
-}
-
-.social__link-container li a {
-  font-weight: 600;
-  color: #0f8f2c;
-}
-
-.article__container p{
-  line-height: 1.3rem;
-}
-
-.article__container a {
-  font-weight: 600;
-  color: #0f8f2c;
-}
-
 pre:has(code){
   margin: 3rem 0rem;
   padding: 1rem 2rem;
@@ -44,4 +20,17 @@ pre > code{
   padding: 0.4rem 0.5rem;
   background-color: #aaa;
   border-radius: 4px;
+}
+
+.code {
+  margin: 3rem 0rem;
+  padding: 1rem 2rem;
+  width: 100%;
+  display: block;
+  background-color: #aaaaaa4d;
+  overflow-inline: scroll;
+}
+
+.code-bash::before{
+  content: "$ ";
 }
