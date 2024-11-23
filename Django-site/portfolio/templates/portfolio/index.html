@@ -1,6 +1,8 @@
 {% extends "portfolio/template__base-portfolio.html" %}
+{% load static %}
+
 {% block styles %}
-  {% load static %} <link rel="stylesheet" href="{% static "portfolio/markdown.css" %}">
+  <link rel="stylesheet" href="{% static "portfolio/markdown.css" %}">
 {% endblock styles %}
 
 {% block header %}
