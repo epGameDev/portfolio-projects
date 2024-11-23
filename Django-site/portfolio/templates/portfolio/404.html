@@ -1,0 +1,11 @@
+{% {% extends "template__base-portfolio.html" %}%}
+{% block title %} 404 Page Not Found {% endblock title %}
+
+{% block header %}
+  {% include "portfolio/snipets/header.html" with active_page="home" %}
+{% endblock header %}
+
+{% block content %}
+  <H1>Sorry but the page you are searching for is not here.</H1>
+
+{% endblock content %}

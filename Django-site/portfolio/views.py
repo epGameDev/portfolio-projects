@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
-import markdown
+from django.http import Http404
 from .models import Note
+import markdown
 
 # Create your views here.
 def index (req):
@@ -10,8 +11,10 @@ def index (req):
         "tag": "welcome to my django project"
     }
     
-    return render(req, "portfolio/index.html", params)
-
+    try:
+        return render(req, "portfolio/index.html", params)
+    except:
+        raise Http404()
 
 
 def about (req):
