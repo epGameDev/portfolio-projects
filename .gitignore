@@ -130,3 +130,43 @@ dist
 .yarn/install-state.gz
 .pnp.*
 .vscode
+
+
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+*.manifest
+*.spec
+pip-log.txt
+pip-delete-this-directory.txt
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+*.cover
+*.pyc
+*.pyo
+*.pyd
+*.env
+.env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Django
+*.log
+local_settings.py
+db.sqlite3
+media/
+staticfiles/
+
+# Flask
+instance/
+.webassets-cache
+
