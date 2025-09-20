@@ -20,7 +20,7 @@ analogue = Image.open("./images/analogue-3D.png")
 # analogue.thumbnail((1200, 900), Image.ANTIALIAS) # Maintains Aspect Ratio
 new_image = ImageOps.contain(analogue, (1200, 900)) # Maintains Aspect Ratio (experimental)
 new_image.show()
-new_image.save("./images/analogue-3D-edited.png")
+new_image.save("./images/analogue-3D-edited.jpg")
 
 # filtered_img = analogue2.filter(ImageFilter.GaussianBlur(3))
 # grey_img = filtered_img.convert("L") # 'L' is grayscale, rgb, 'P' is for palette, '1' B&W dithering
