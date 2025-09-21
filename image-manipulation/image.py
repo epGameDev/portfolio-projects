@@ -1,5 +1,10 @@
 from PIL import Image, ImageFilter, ImageOps
+# Image: Main image module
+# ImageFilter: Allows for pre-configured filters
+# ImageOps: New in development image functions
 
+
+# First thing is opening an image file path and assigning it to a variable
 mario3 = Image.open("./images/mario1.png")
 analogue = Image.open("./images/analogue-3D.png")
 # analogue2 = Image.open("./images/analogue-3D-edited.png")
@@ -9,6 +14,11 @@ analogue = Image.open("./images/analogue-3D.png")
 
 # format, size, mode, show(), new(), resize(sizeX, sizeY), thumbnail(sizeX, sizeY) modifies in places
 # crop((left, top, right, bottom)), rotate(deg), transpose(), convert(), paste(), save(), filter()
+
+
+
+
+### Image Function Examples ###
 
 # ImageOps.colorize(), ImageOps.crop(image: Image, border: int = 0) Removes image borders, ImageOps.flip()
 # ImageOps.invert(image: Image), ImageOps.mirror(image: Image), ImageOps.posterize(image: Image, bits: int)

@@ -21,8 +21,8 @@ try:
 except:
     print("Error was received")
 
-
-def convert_many(filefolder_location = ".", file_extension):
+# Learned new thing. Default parameters must com after regular parameters.
+def convert_many(file_extension, filefolder_location = "."):
     for filename in os.listdir("folder_location"):
         if filename.endswith(f".{file_extension}"):
             pass
