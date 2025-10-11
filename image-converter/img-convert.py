@@ -7,6 +7,9 @@ import os
 directory = input("What directory would you like to iterate over?  # ").strip()
 current_directory = os.getcwd()
 
+if not os.path.exists(f"{current_directory}/images"):
+    output_folder = os.makedirs("images")
+
 if os.path.exists(directory):
 
     for image in os.listdir(directory):
@@ -16,6 +19,24 @@ if os.path.exists(directory):
             placeholder.save(f"{current_directory}/images/{file_name}-converted.webp", format="WEBP")
         except Exception as err:
             print(f"There was an error: {err}")
-            
+
 else:
     print(f"File path {directory} does not exist")
+
+
+# Future task (Create a match case statement that will take in an option and create an output)
+
+# def http_error(status):
+#     match status:
+#         case 1:
+#             return convert_to_JPG()
+#         case 2:
+#             return convert_to_PNG()
+#         case 3:
+#             return scale_image()
+
+#         # If an exact match is not confirmed, this last case will be used if provided
+#         case _:
+#             return "Something's wrong"
+
+# We can create a whole image processing application right in this application
