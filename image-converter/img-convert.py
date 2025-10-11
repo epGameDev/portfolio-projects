@@ -1,28 +1,21 @@
 from PIL import Image  # Import the main image module
 import os
 
+# Goal is to loop through a folder of images and convert their current type to a target type.
+
 # Open the filepath to the image you want to convert.
-image_path = input("Provide the image path:  ")
-originalIMG = Image.open(image_path)
-image_name = os.path.splitext(image_path)
+directory = input("What directory would you like to iterate over?  # ").strip()
+current_directory = os.getcwd()
 
+if os.path.exists(directory):
 
-# Convert the image to PNG
-try:
-    if originalIMG.format == "JPEG":
-        convertedIMG= originalIMG.convert("RGBA")
-        convertedIMG.save(f"{image_name[0]}.png")
-        print("It's now a PNG!")
-
-    elif originalIMG.format == "PNG":
-        convertedIMG= originalIMG.convert("RGB")
-        convertedIMG.save(f"{image_name[0]}.jpg")
-        print("It's now a JPEG!")
-except:
-    print("Error was received")
-
-# Learned new thing. Default parameters must com after regular parameters.
-def convert_many(file_extension, filefolder_location = "."):
-    for filename in os.listdir("folder_location"):
-        if filename.endswith(f".{file_extension}"):
-            pass
+    for image in os.listdir(directory):
+        try:
+            placeholder = Image.open(f"{directory}/{image}")
+            file_name, extension = os.path.splitext(placeholder.filename)
+            placeholder.save(f"{current_directory}/images/{file_name}-converted.webp", format="WEBP")
+        except Exception as err:
+            print(f"There was an error: {err}")
+            
+else:
+    print(f"File path {directory} does not exist")
