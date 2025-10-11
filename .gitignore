@@ -170,3 +170,4 @@ staticfiles/
 instance/
 .webassets-cache
 
+images/
