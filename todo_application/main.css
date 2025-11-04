@@ -1,24 +1,32 @@
 :root{
+    /* Brand Colors */
     --main-brand-color: #0B0F2D;
     --accent-brand-color: #FF2D95;
     --alt-accent-brand-color-1: #00E5FF;
     --alt-accent-brand-color-2: #7C3AED;
     --alt-accent-brand-color-3: #A6FF00;
     --alt-accent-brand-color-4: #FFD166;
+
+    /* Background Colors */
     --bg-dark: #222;
     --bg-light: #fff;
     --bg-alt: #eee;
 
+    /* Utilities */
     --border-radius: 8px;
 
-    --main: Arial, Helvetica, sans-serif;
+    /* Fonts */
+    --main-font: Arial, Helvetica, sans-serif;
     --accent-font: sans-serif;
 
+    /* Font Colors */
     --font-black: #000;
     --font-white: #fff;
     --font-dark-grey: #333;
     --font-off-white: #ddd;
 }
+
+
 
 *{
     box-sizing: border-box;
