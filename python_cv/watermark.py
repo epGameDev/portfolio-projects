@@ -20,7 +20,8 @@ try:
         page.merge_page(stamp, over=False)
 
     # Writing to File
-    writer.write("tagged.pdf")
+    with open("tagged.pdf", 'wb') as output_file:
+        writer.write(output_file)
 
-except FileNotFoundError:
-    print("A file was not provided or doesn't exist.")
+except FileNotFoundError as err:
+    print(err)
