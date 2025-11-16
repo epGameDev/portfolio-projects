@@ -1,0 +1,95 @@
+:root{
+    /* Brand Colors */
+    --main-brand-color: #0B0F2D;
+    --accent-brand-color: #FF2D95;
+    --alt-accent-brand-color-1: #00E5FF;
+    --alt-accent-brand-color-2: #7C3AED;
+    --alt-accent-brand-color-3: #A6FF00;
+    --alt-accent-brand-color-4: #FFD166;
+
+    /* Background Colors */
+    --bg-dark: #222;
+    --bg-light: #fff;
+    --bg-alt: #eee;
+
+    /* Utilities */
+    --border-radius: 8px;
+
+    /* Fonts */
+    --main-font: Arial, Helvetica, sans-serif;
+    --accent-font: sans-serif;
+
+    /* Font Colors */
+    --font-black: #000;
+    --font-white: #fff;
+    --font-dark-grey: #333;
+    --font-off-white: #ddd;
+}
+
+
+
+*{
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container__todo {
+    width: 100%;
+    background-color: #333;
+    padding-block: 40px;
+    
+    .inner-container {
+        margin: auto;
+        padding: 1rem;
+        width: fit-content;
+        background-color: #fff;
+        border-radius: var(--border-radius);
+
+        h3 { margin-block-start: 1rem;}
+        
+        input[type="search"] {
+            width: 100%;
+            padding: 0.7rem 1rem;
+            font-size: 0.95rem;
+            border: 1px solid #e0e0e0;
+            border-radius: var(--border-radius);
+            background-color: #fafafa;
+            transition: all 0.2s ease;
+            
+            &:focus {
+                outline: none;
+                border-color: #4a90e2;
+                background-color: #fff;
+                box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+            }
+        }
+        
+        input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+            accent-color: #4a90e2;
+        }
+        
+        .priority-list, .task-list {
+            list-style: none;
+            padding-left: 0;
+            h4 { margin-block-start: 0rem; color: var(--main-brand-color)}
+        }
+        .priority-list {
+            background-color: #666;
+            padding: 1rem;
+            border-radius: var(--border-radius);
+        }
+        .task-list {
+            padding: 1rem;
+        }
+
+    }
+}
+
