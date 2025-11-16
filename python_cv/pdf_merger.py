@@ -1,9 +1,18 @@
 from pypdf import PdfWriter
+import sys
 
 pdf_merger = PdfWriter()
 
-for pdf_file in ["twopage.pdf", "wtr.pdf", "dummy.pdf"]:
-    pdf_merger.append(pdf_file)
+files = sys.argv[1:]
 
-pdf_merger.write("large-PDF.pdf")
-pdf_merger.close()
+try:
+    if not files:
+        raise FileExistsError
+    for pdf_file in files:
+        pdf_merger.append(pdf_file)
+
+    pdf_merger.write("combined-PDF.pdf")
+    pdf_merger.close()
+
+except FileExistsError:
+    print("No files were provided for this merge")
