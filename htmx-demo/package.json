@@ -1,0 +1,18 @@
+{
+  "name": "htmx-demo",
+  "version": "1.0.0",
+  "description": "Practice project for creating htmx applications.",
+  "keywords": [
+    "htmx"
+  ],
+  "license": "ISC",
+  "author": "Eric Philippot",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "test": "test-htmx"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
