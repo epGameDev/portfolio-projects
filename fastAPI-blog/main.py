@@ -1,3 +1,5 @@
+# ============================
+# ========= Imports ==========
 from fastapi import FastAPI, Request, HTTPException, status
 # from fastapi.responses import HTMLResponse
 from fastapi.exceptions import RequestValidationError
@@ -8,11 +10,15 @@ from starlette.exceptions import HTTPException as StarletteHTTPException # Built
 from typing import List, Dict, Any
 
 
+
+
 # ===============================
 # ========= Initialize ==========
 server = FastAPI()
 templates = Jinja2Templates(directory="templates")
 server.mount("/static", StaticFiles(directory="static"), name="static")
+
+
 
 
 # =========================
@@ -54,6 +60,8 @@ posts: List[Dict[str, Any]] = [
         "date_posted": "2023-08-25"
     }
 ]
+
+
 
 
 # ==========================================
@@ -156,5 +164,9 @@ def validation_exception_handler(request: Request, exception: RequestValidationE
     )
 
 
+
+
+# ======================================
+# ========= Local State Check ==========
 if __name__ == "__main__":
     pass
