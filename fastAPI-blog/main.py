@@ -7,6 +7,7 @@ from fastapi.responses import JSONResponse
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
 from starlette.exceptions import HTTPException as StarletteHTTPException # Built-in: For edge cases that HTTPExceptions might not catch.
+from schemas import PostCreate, PostResponse
 from typing import List, Dict, Any
 
 
@@ -64,8 +65,8 @@ posts: List[Dict[str, Any]] = [
 
 
 
-# ==========================================
-# ========= Server Page Functions ==========
+# ============================================
+# ========= Template Page Functions ==========
 
 # HOME PAGE AND ALL POSTS
 @server.get("/", include_in_schema=False, name="home") 
@@ -97,12 +98,12 @@ def load_post(req: Request, post_id: int):
 # ========= Server API Functions ==========
 
 # API CALL FOR POSTS
-@server.get("/api/posts/")
+@server.get("/api/posts/", response_model=list[PostResponse]) # response_model is out schema
 def get_posts():
     return posts
 
 
-@server.get("/api/posts/{post_id}")
+@server.get("/api/posts/{post_id}", response_model=PostResponse)
 def get_post(post_id: int):
 
     for post in posts:
@@ -111,6 +112,21 @@ def get_post(post_id: int):
             return post
         
     raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Post was not found")
+
+
+## Create Post
+@server.post( "/api/posts", response_model=PostResponse, status_code=status.HTTP_201_CREATED)
+def create_post(post: PostCreate):
+    new_id = max(current_post["id"] for current_post in posts) + 1 if posts else 1
+    new_post = {
+        "id": new_id,
+        "author": post.author,
+        "title": post.title,
+        "content": post.content,
+        "date_posted": "April 23, 2025",
+    }
+    posts.append(new_post)
+    return new_post
 
 
 

@@ -1,0 +1,20 @@
+from pydantic import BaseModel, ConfigDict, Field
+
+class PostBase(BaseModel):
+    # Without default values, these fields are required.
+    title: str = Field(min_length=1, max_length=100)
+    content: str = Field(min_length=1)
+    author: str = Field(min_length=1, max_length=50)
+
+
+class PostCreate(PostBase):
+    pass
+
+
+class PostResponse(PostBase):
+    # Allows pydantic to read dot notation
+    model_config = ConfigDict(from_attributes=True)
+
+    id: int
+    date_posted: str
+    
