@@ -6,7 +6,7 @@ from pydantic import BaseModel, ConfigDict, Field, EmailStr
 class UserBase(BaseModel):
     username: str = Field( min_length=5, max_length=20 )
     email: EmailStr = Field( max_length=120 )
-    password: str = Field( min_length=8 )
+    # password: str = Field( min_length=8 )
     
 
 class UserCreate(UserBase):
@@ -30,6 +30,9 @@ class PostBase(BaseModel):
 class PostCreate(PostBase):
     user_id: int # Temp placeholder
 
+class PostUpdate(BaseModel):
+    title: str | None = Field(min_length=1, max_length=100, default=None)
+    content: str | None = Field(min_length=1, default=None)
 
 class PostResponse(PostBase):
     # Allows pydantic to read dot notation

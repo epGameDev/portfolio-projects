@@ -15,7 +15,7 @@ from sqlalchemy.orm import Session
 
 import models
 from database import Base, engine, get_db
-from schemas import PostCreate, PostResponse, UserCreate, UserResponse
+from schemas import PostCreate, PostResponse, PostUpdate, UserCreate, UserResponse
 
 
 
@@ -75,10 +75,11 @@ def load_post(request: Request, post_id: int, db: Annotated[Session, Depends(get
 
 
 
-@server.get("/users/{user_id}/posts", include_in_schema=False, name="user_posts")
+@server.get("/users/{user_id}/posts", include_in_schema=False, name="user_posts_page")
 def user_posts_page( request: Request, user_id: int, db: Annotated[Session, Depends(get_db)] ):
 
     user_result = db.execute(select(models.User).where(models.User.id == user_id))
+    print(user_result)
     user = user_result.scalars().first()
 
     if not user:
@@ -158,6 +159,33 @@ def get_post(post_id: int, db: Annotated[Session, Depends(get_db)]):
         return post
     
     raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Post not found")
+
+
+
+# API CALL FOR REPLACING FULL POST
+@server.put("/api/posts/{post_id}", response_model=PostResponse)
+def update_post_full(post_id: int, post_data: PostCreate, db: Annotated[Session, Depends(get_db)]):
+
+    post_result = db.execute(select(models.Post).where(models.Post.id == post_id))
+    post = post_result.scalars().first()
+
+    if not post:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Post not found")
+
+    if post_data.user_id != post.user_id:
+        result = db.execute(select(models.User).where(models.User.id == post_data.user_id))
+        user = result.scalars().first()
+
+        if not user:
+            raise HTTPException( status_code=status.HTTP_404_NOT_FOUND, detail="User not found" )
+    
+    post.title = post_data.title
+    post.content = post_data.content
+    post.user_id = post_data.user_id
+    
+    db.commit()
+    db.refresh(post)
+    return post
 
 
 
