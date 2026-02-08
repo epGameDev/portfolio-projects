@@ -35,3 +35,5 @@ posts: list[dict] = [
         "date_posted": "2023-08-25"
     }
 ]
+
+

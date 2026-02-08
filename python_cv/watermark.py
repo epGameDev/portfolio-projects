@@ -23,5 +23,5 @@ try:
     with open("tagged.pdf", 'wb') as output_file:
         writer.write(output_file)
 
-except FileNotFoundError as err:
+except (FileNotFoundError, TypeError) as err:
     print(err)

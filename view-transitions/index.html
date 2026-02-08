@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link rel="stylesheet" href="./static/styles.css">
+    <!-- <style>
+        @view-transition { navigation: auto; }
+        :root::view-transition-old(root),
+        :root::view-transition-new(root) { animation-duration: 1s; }
+    </style> -->
+
+    <script>
+        addEventListener("pagereveal", (e) => {
+        console.log("pagereveal viewTransition:", !!e.viewTransition);
+        });
+    </script>
+
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="./index.html">
+                    <p>LOGO</p>
+                </a>
+            </div>
+            <ul class="menu">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./about.html">About</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Documentation</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="hero">
+        <img src="./media/mario-1.jpg" alt="" height="539" decoding="async" fetchpriority="high">
+    </section>
+
+    <main>
+        <h1>Home Page</h1>
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat eligendi eius possimus harum est asperiores aliquam a beatae. Quisquam, consectetur magni. Doloribus accusantium reiciendis totam quas molestias maxime nisi reprehenderit!
+            Quas dolores accusantium molestiae distinctio magni commodi quaerat. Placeat ratione unde voluptas velit, ipsum quaerat quidem voluptate, eaque, consequuntur dolorem esse alias at sequi laborum natus cupiditate dicta blanditiis impedit.
+            Ratione eveniet recusandae veritatis similique at, ducimus et nostrum temporibus voluptate maiores officia expedita aspernatur vero beatae voluptatem animi reprehenderit rem harum porro provident tempora. Nulla at cupiditate quos voluptatibus.
+        </p>
+        
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium rem obcaecati adipisci, excepturi quaerat assumenda distinctio quae dolorum sint placeat cupiditate recusandae atque quas eius enim beatae, officia asperiores facere.
+            Alias cum dicta voluptates velit aut ipsa odio tempore officia illo odit vel pariatur laudantium animi maiores natus saepe, eaque non ipsum facere. Voluptates cum maiores quasi ab, soluta laborum.
+            Veniam, obcaecati animi dolor ipsum explicabo eos assumenda doloribus laboriosam ducimus exercitationem possimus, recusandae ea reprehenderit quia temporibus doloremque est voluptatem cupiditate ab corporis! Placeat quisquam ex ipsam reprehenderit dolore.
+            Explicabo atque placeat aliquam repellat architecto quis, sit totam culpa inventore, aliquid vero aperiam exercitationem magnam! Quo voluptas ducimus exercitationem consectetur sit necessitatibus temporibus explicabo dolore mollitia, ut et expedita!
+            Facilis nesciunt veniam, dolorem, est ipsa laudantium enim velit id magni labore quae quisquam in pariatur deserunt a? Illo nesciunt itaque molestias, quia atque facilis hic nulla eaque tenetur fugit?
+        </p>
+    </main>
+</body>
+</html>
+

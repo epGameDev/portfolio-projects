@@ -1,11 +1,12 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import DeclarativeBase, sessionmaker
 
-SQLALCHEMY_DATABASE_URL = "sqlite:///./blog.db"
+# creates a file in current directory and names it blog.db using sqlite.
+SQLALCHEMY_DATABASE_URL = "sqlite:///./blog.db" 
 
 engine = create_engine(
     SQLALCHEMY_DATABASE_URL,
-    connect_args={"check_same_thread": False}, #SQLite specific since it runs on one thread.
+    connect_args={"check_same_thread": False}, #SQLite specific since it runs on one thread. Disables the restriction
 )
 
 # A Factory that creates sessions. Each request gets it's own session which is a transaction with the database

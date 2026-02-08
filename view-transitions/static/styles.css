@@ -1,0 +1,165 @@
+@view-transition { navigation: auto; }
+
+/* No root fade; we animate shared elements only */
+:root::view-transition-old(root),
+:root::view-transition-new(root) {
+  animation: none;
+}
+
+/* Shared elements */
+.hero img { view-transition-name: hero-img; }
+h1 { view-transition-name: title; }
+
+::view-transition-old(hero-img),
+::view-transition-new(hero-img),
+::view-transition-old(title),
+::view-transition-new(title) {
+  animation-duration: 3s;
+  animation-timing-function: ease-in-out;
+}
+
+
+:root {
+	--bg: #ffffff;
+	--text: #111111;
+	--muted: rgba(17, 17, 17, 0.72);
+	--border: rgba(0, 0, 0, 0.10);
+	--nav-bg: rgba(255, 255, 255, 0.78);
+	--nav-bg-fallback: rgba(255, 255, 255, 0.92);
+	--focus: rgba(0, 102, 204, 0.35);
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html, body {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	background: var(--bg);
+	color: var(--text);
+	font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+header {
+	position: sticky;
+	top: 0;
+	z-index: 50;
+	border-bottom: 1px solid var(--border);
+	background: var(--nav-bg-fallback);
+}
+
+@supports ((-webkit-backdrop-filter: blur(14px)) or (backdrop-filter: blur(14px))) {
+	header {
+		background: var(--nav-bg);
+		-webkit-backdrop-filter: saturate(180%) blur(14px);
+		backdrop-filter: saturate(180%) blur(14px);
+	}
+}
+
+header nav {
+	height: 52px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 24px;
+	max-width: 980px;
+	margin: 0 auto;
+	padding: 0 16px;
+}
+
+header nav .logo a {
+	display: inline-flex;
+	align-items: center;
+	text-decoration: none;
+	color: var(--text);
+}
+
+header nav .logo p {
+	margin: 0;
+	font-size: 12px;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--muted);
+}
+
+header nav .menu {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	align-items: center;
+	gap: 18px;
+}
+
+header nav .menu a {
+	display: inline-flex;
+	align-items: center;
+	height: 32px;
+	padding: 0 10px;
+	border-radius: 999px;
+	text-decoration: none;
+	color: var(--muted);
+	font-size: 12px;
+	letter-spacing: 0.01em;
+	transition: background-color 160ms ease, color 160ms ease;
+}
+
+header nav .menu a:hover {
+	color: var(--text);
+	background: rgba(0, 0, 0, 0.06);
+}
+
+header nav .menu a:focus-visible {
+	outline: none;
+	box-shadow: 0 0 0 4px var(--focus);
+}
+
+.hero {
+	width: 100%;
+    height: 540px;           /* or clamp(...) */
+    overflow: hidden;
+}
+
+.hero img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+	display: block;
+	object-fit: cover;
+	object-position: center;
+	display: block;
+}
+
+main{
+    margin:auto;
+    max-width: 1200px;
+}
+
+h1 {
+	max-width: 980px;
+	margin: 48px auto 0;
+	padding: 0 16px;
+	font-size: 40px;
+	letter-spacing: -0.02em;
+}
+
+@media (max-width: 560px) {
+	header nav {
+		gap: 12px;
+	}
+
+	header nav .menu {
+		gap: 10px;
+	}
+
+	header nav .menu a {
+		padding: 0 8px;
+	}
+}

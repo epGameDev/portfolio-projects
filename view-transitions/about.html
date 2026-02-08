@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link rel="stylesheet" href="./static/styles.css">
+    <!-- <style>
+        @view-transition { navigation: auto; }
+        :root::view-transition-old(root),
+        :root::view-transition-new(root) { animation-duration: 1s; }
+    </style> -->
+
+    <script>
+        addEventListener("pagereveal", (e) => {
+        console.log("pagereveal viewTransition:", !!e.viewTransition);
+        });
+    </script>
+
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="./index.html">
+                    <p>LOGO</p>
+                </a>
+            </div>
+            <ul class="menu">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./about.html">About</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Documentation</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <img src="./media/mario-2.jpg" alt="" height="539" decoding="async" fetchpriority="high">
+    </section>
+
+    <main>
+        <h1>About Us</h1>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam voluptatibus, deleniti eius suscipit molestiae sed non, ipsam praesentium nisi necessitatibus iure fugiat hic quibusdam ut. Exercitationem aliquid quos sapiente facilis.
+            Repellendus, cum at? Recusandae deserunt deleniti veniam eum omnis distinctio doloribus, sunt, ullam velit accusamus consequuntur nobis expedita architecto fugiat reiciendis cum porro vel dolore minus nesciunt autem nulla laborum.
+            Error iusto molestias nesciunt obcaecati id perferendis excepturi possimus voluptatum rem atque doloribus quos vel a officiis, est maiores culpa. Ex optio reprehenderit et, alias doloribus repudiandae totam earum perspiciatis?
+            Incidunt porro odio tempora nihil error eius possimus esse, adipisci quidem praesentium magnam accusamus dolorum accusantium consequuntur corporis beatae quae in temporibus, maiores architecto aliquam sint sed rerum? Voluptates, corporis.
+        Ipsum inventore totam nihil, assumenda rerum illo eligendi, qui maxime quas ex sed. Maiores, impedit. Nesciunt natus omnis architecto odio dolore explicabo reiciendis temporibus, praesentium quasi aperiam consectetur ipsum odit.
+        </p>
+        <p>
+            
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum magni ex dicta dolorum cupiditate deleniti praesentium illo fugiat sunt? Tempore, doloribus. Sunt nesciunt, harum facere accusantium dignissimos molestias sequi cumque.
+            Adipisci accusantium aspernatur eum eos dicta. Veniam nostrum cupiditate possimus tenetur, commodi eligendi voluptatibus adipisci harum inventore ab sunt voluptas tempora fugiat repellendus esse veritatis dolores rerum culpa modi voluptate?
+            Sunt, fuga? Suscipit iusto dolore saepe placeat ea optio voluptas, expedita nihil ipsa obcaecati laboriosam a soluta accusamus perferendis culpa eligendi architecto minima eum in velit nobis dolorum quod! Alias.
+            Voluptatum reprehenderit debitis magni facere veritatis unde, minus voluptates ex quia, reiciendis incidunt quam ipsum ab sapiente nisi sint voluptate voluptatem quo? Deserunt perspiciatis aliquid, impedit eaque dolorum beatae molestiae?
+            Eligendi corporis dolorum aperiam deserunt? Unde exercitationem quibusdam iste tempore ea commodi, impedit quia deserunt repellendus pariatur est eaque voluptas accusantium et inventore, amet obcaecati in adipisci? Natus, dolor maxime.
+            Molestiae sapiente deserunt delectus doloremque maiores amet incidunt voluptates quod tenetur aut omnis neque vel ab, facilis non eum beatae veniam sint. Rerum est earum autem, maiores aperiam error ipsam.
+            Optio quaerat ullam alias recusandae officiis, beatae debitis voluptatum suscipit odio, quo dolores quibusdam quis fugiat. Vitae consequatur sapiente molestias corrupti, neque quidem fugiat officia veniam nemo aut voluptatem? Voluptate.
+            Rerum perspiciatis modi totam enim illum consectetur earum. Alias nihil est facilis soluta neque fugit qui aperiam necessitatibus consequuntur modi iste quo quam eos debitis voluptates cumque, deleniti ipsum animi!
+            
+        </p>
+    </main>
+
+</body>
+</html>
+
+<script>
+  addEventListener("pageswap", (e) => {
+    console.log("pageswap:", location.href, "origin:", location.origin, "viewTransition:", !!e.viewTransition);
+  });
+  addEventListener("pagereveal", (e) => {
+    console.log("pagereveal:", location.href, "origin:", location.origin, "viewTransition:", !!e.viewTransition);
+  });
+</script>
